@@ -1,0 +1,23 @@
+name: aazhi-python-backend
+
+services:
+  ai:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "4100:4100"
+    environment:
+      ENV: production
+      PORT: 4100
+      INTERNAL_API_KEY: ${INTERNAL_API_KEY:-dev-internal-key-change-me}
+      DATABASE_URL: postgresql+psycopg://aazhi:aazhi@host.docker.internal:5433/aazhi
+      POSTGRES_SCHEMA: ai
+      MONGODB_URI: mongodb://host.docker.internal:27017/aazhi
+      REPO_WORKDIR: /var/lib/aazhi/repos
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - aazhi_ai_repos:/var/lib/aazhi/repos
+
+volumes:
+  aazhi_ai_repos:
