@@ -36,7 +36,11 @@ Call internal routes with header `X-Internal-Key: <INTERNAL_API_KEY>`.
 docker compose up --build
 ```
 
-Runs on port **4100** and expects Postgres/Mongo/Redis from `../backend/docker compose up -d postgres mongo redis`.
+Runs on port **4100** and expects Postgres/Mongo/Redis from the Node stack:
+
+```bash
+cd ../backend && docker compose up -d postgres mongo redis
+```
 
 ## Node integration (summary)
 

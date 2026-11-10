@@ -9,7 +9,7 @@ structlog.configure(processors=[structlog.processors.JSONRenderer()])
 settings = get_settings()
 
 app = FastAPI(
-    title="Aazhi Python-backend",
+    title="aazhi-python-backend",
     description="AI indexing and decode worker (internal API)",
     version="0.1.0",
 )
