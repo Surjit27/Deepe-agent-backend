@@ -1,7 +1,7 @@
 import structlog
 from fastapi import FastAPI
 
-from app.api.routes import health, jobs
+from app.api.routes import api_tokens, health, jobs
 from app.config import get_settings
 
 structlog.configure(processors=[structlog.processors.JSONRenderer()])
@@ -16,6 +16,7 @@ app = FastAPI(
 
 app.include_router(health.router)
 app.include_router(jobs.router, prefix="/v1")
+app.include_router(api_tokens.router, prefix="/v1")
 
 
 @app.on_event("startup")
