@@ -108,6 +108,28 @@ OpenAPI: http://localhost:4100/docs
 2. New `ai` table → Alembic revision here only.
 3. New portal-visible entity → Node Prisma/SQL + API; Python only references IDs.
 
+## Documentation map
+
+| Document | Where |
+|----------|--------|
+| **Project & scope** (this file) | `docs/PROJECT_AND_SCOPE.md` in each of the three repos |
+| **Postgres / Mongo split, job handoff** | [SCHEMA_ARCHITECTURE.md](./SCHEMA_ARCHITECTURE.md) |
+| **Runbooks** | Each repo’s `README.md` |
+
+When system scope changes, update the matching sections in **all three** `PROJECT_AND_SCOPE.md` copies and bump the *Last updated* line below.
+
+## Local Git identity (Aazhi clones only)
+
+The three repos are often siblings under one folder (for example `Personal projects/Aazhi/`). Use **repo-local** Git config in each clone so other folders on the machine keep their own `user.name` / `user.email`:
+
+```bash
+cd Python-backend   # repeat in Frontend/ and backend/
+git config user.name "Surjit27"
+git config user.email "billionfolds@gmail.com"
+```
+
+This does **not** modify global Git configuration.
+
 ---
 
-*Last updated: 2026-11-24 — keep in sync with sibling copies in `Frontend/docs/` and `backend/docs/` when system scope changes.*
+*Last updated: 2026-11-25 — keep in sync with sibling copies in `Frontend/docs/` and `backend/docs/` when system scope changes.*
