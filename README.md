@@ -1,6 +1,8 @@
-# Python-backend (Aazhi AI worker)
+# Deepe · Python backend (Deepe-agent-backend)
 
-FastAPI service for **git indexing**, **static graph extraction**, and **LLM decode** (OpenAI / Gemini). It does **not** handle portal login or JWT — the Node `backend/` orchestrates jobs and persists the canonical portal graph.
+FastAPI **internal** worker for **git indexing**, **static graph extraction**, and **LLM decode** (OpenAI / Gemini). It does **not** handle portal login or JWT — the [Node backend](https://github.com/Surjit27/Aazhi-js-backend) orchestrates jobs and persists the canonical portal graph.
+
+**Project scope and three-repo layout:** [docs/PROJECT_AND_SCOPE.md](docs/PROJECT_AND_SCOPE.md)
 
 ## Layout
 
