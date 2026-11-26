@@ -118,3 +118,19 @@ sequenceDiagram
 | Python-backend | 4100 | `DATABASE_URL` → search_path `ai` |
 
 Both use the same `backend/docker-compose.yml` Postgres volume.
+
+## Quick verification (SQL)
+
+After an index job, sanity-check ownership boundaries:
+
+```sql
+-- Node-owned portal rows (example; table names may evolve)
+SELECT id, status FROM public.index_run ORDER BY created_at DESC LIMIT 5;
+
+-- Python-owned worker rows
+SELECT id, status FROM ai.index_jobs ORDER BY created_at DESC LIMIT 5;
+```
+
+If `ai.index_jobs` updates but `public.index_run` does not, the handoff failed on the Node side—see the sequence diagram above.
+
+*Doc touch: 2026-11-26*
