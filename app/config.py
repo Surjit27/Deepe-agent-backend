@@ -17,8 +17,16 @@ class Settings(BaseSettings):
     mongodb_uri: str = "mongodb://127.0.0.1:27017/aazhi"
     repo_workdir: str = "/tmp/aazhi-repos"
 
+    token_cipher_secret: str = ""
+
     openai_api_key: str = ""
     google_api_key: str = ""
+    anthropic_api_key: str = ""
+    cursor_api_key: str = ""
+    cerebras_api_key: str = ""
+    groq_api_key: str = ""
+    mistral_api_key: str = ""
+    openrouter_api_key: str = ""
 
 
 @lru_cache
