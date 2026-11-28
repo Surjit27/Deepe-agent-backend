@@ -133,4 +133,4 @@ SELECT id, status FROM ai.index_jobs ORDER BY created_at DESC LIMIT 5;
 
 If `ai.index_jobs` updates but `public.index_run` does not, the handoff failed on the Node side—see the sequence diagram above.
 
-*Doc touch: 2026-11-26*
+*Doc touch: 2026-11-28 — verify `ai.index_jobs` vs `public.index_run` after contract changes.*
