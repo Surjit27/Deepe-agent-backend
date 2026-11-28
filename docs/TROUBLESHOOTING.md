@@ -24,6 +24,12 @@ Match the value in Node `.env` and this repo’s `.env`.
 2. Confirm git clone credentials / repo URL in the job body from Node.
 3. Mongo connection required for snapshot snippets—verify `MONGO_URI` matches the Node stack.
 
+## Decode jobs fail with provider errors
+
+1. Node must pass short-lived credentials in the job payload—keys are not stored in `ai`.
+2. Confirm the provider name in the request matches `app/services/decode` expectations.
+3. Raise log level with `LOG_LEVEL=debug` for request IDs shared with Node logs.
+
 ## OpenAPI drift with Node
 
 Regenerate or hand-sync types from http://localhost:4100/openapi.json when `app/contracts/` changes. See [SCHEMA_ARCHITECTURE.md](./SCHEMA_ARCHITECTURE.md) for identity fields.
@@ -33,4 +39,4 @@ Regenerate or hand-sync types from http://localhost:4100/openapi.json when `app/
 - [PROJECT_AND_SCOPE.md](./PROJECT_AND_SCOPE.md)
 - [../README.md](../README.md)
 
-*Last updated: 2026-11-26*
+*Last updated: 2026-11-28*
