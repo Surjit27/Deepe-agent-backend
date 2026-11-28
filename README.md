@@ -4,6 +4,7 @@ FastAPI **internal** worker for **git indexing**, **static graph extraction**, a
 
 **Project scope and three-repo layout:** [docs/PROJECT_AND_SCOPE.md](docs/PROJECT_AND_SCOPE.md)  
 **Local dev issues:** [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)  
+**Schema split:** [docs/SCHEMA_ARCHITECTURE.md](docs/SCHEMA_ARCHITECTURE.md)  
 **GitHub integration branch:** `main`.
 
 ## Layout
